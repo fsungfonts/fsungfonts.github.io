@@ -1,0 +1,35 @@
+baseURL: https://fsungfonts.github.io/
+languageCode: zh-TW
+title: FSung Fonts
+theme: primer
+params:
+  github_repo: fsungfonts/fsungfonts.github.io
+  repos:
+    mappings: fsungfonts/mappings
+  branches:
+    mappings: main
+  sources:
+    - "DCCV: 異體字字典 (2024)"
+    - "GHZR: 漢語大字典 (2010)"
+    - "GZH: 中華字海 (2000)"
+    - "HZH: 漢字海 (2018)"
+module:
+  imports:
+    - path: github.com/fsungfonts/mappings
+  mounts:
+    - source: content
+      target: content
+taxonomies:
+  tag: "tags"
+permalinks:
+  page:
+    mappings: /:slug/
+  term:
+    tags: /:slug/
+caches:
+  images:
+    dir: :cacheDir/images
+disableKinds:
+  - taxonomyTerm
+  - RSS
+  - sitemap

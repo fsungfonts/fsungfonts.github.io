@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="noarchive">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+{{ partialCached "head/css.html" . }}
+
+{{ $svgicon := resources.Get "icon.svg" }}
+<link rel="icon" href="{{ $svgicon.RelPermalink }}" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png" sizes="180x180">
+
+{{ if eq .Section "mappings" }}
+{{ $manifest := resources.Get "manifest.json" }}
+<link rel="manifest" href="{{ $manifest.RelPermalink }}">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+{{ end }}

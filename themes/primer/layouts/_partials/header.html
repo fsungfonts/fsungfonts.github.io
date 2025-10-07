@@ -1,0 +1,13 @@
+{{ if not .IsHome }}
+<nav class="text-right text-gray">
+    {{ with .FirstSection }}
+  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+{{ else }}
+  {{ .Title }}
+{{ end }}
+    |
+  <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+</nav>
+{{ else }}
+  <h1><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></h1>
+{{ end }}

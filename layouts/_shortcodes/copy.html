@@ -1,0 +1,24 @@
+<span class="copy-target">{{ .Get 0 }}</span>
+<button class="btn btn-sm btn-outline copy-btn" onclick="copyAndConfirm(this)">
+  <svg class="octicon octicon-clippy" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+    <path fill-rule="evenodd"
+      d="M2 2.5A2.5 2.5 0 014.5 0h7A2.5 2.5 0 0114 2.5v11a.5.5 0 01-1 0v-11A1.5 1.5 0 0011.5 1h-7A1.5 1.5 0 003 2.5v11A1.5 1.5 0 004.5 15h5a.5.5 0 010 1h-5A2.5 2.5 0 012 13.5v-11z"></path>
+  </svg>
+</button>
+<script>
+function copyAndConfirm(el) {
+  const text = el.previousElementSibling.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.remove("btn-outline");
+    el.classList.add("btn-success");
+    el.innerHTML = "Copied!";
+    setTimeout(() => {
+      el.classList.remove("btn-success");
+      el.classList.add("btn-outline");
+      el.innerHTML = `<svg class='octicon octicon-clippy' viewBox='0 0 16 16' width='16' height='16' aria-hidden='true'>
+        <path fill-rule='evenodd' d='M2 2.5A2.5 2.5 0 014.5 0h7A2.5 2.5 0 0114 2.5v11a.5.5 0 01-1 0v-11A1.5 1.5 0 0011.5 1h-7A1.5 1.5 0 003 2.5v11A1.5 1.5 0 004.5 15h5a.5.5 0 010 1h-5A2.5 2.5 0 012 13.5v-11z'></path>
+      </svg>`;
+    }, 1200);
+  });
+}
+</script>

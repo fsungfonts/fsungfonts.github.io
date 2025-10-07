@@ -1,0 +1,13 @@
+Sitemap: https://fsungfonts.github.io/sitemap.xml
+
+User-agent: Baiduspider
+User-agent: Bytespider
+User-agent: DeepSeekBot
+User-agent: PanguBot
+User-agent: PetalBot
+User-agent: TikTokSpider
+User-agent: Yandex
+User-agent: YandexAdditional
+User-agent: YandexAdditionalBot
+User-agent: YandexFavicons
+Disallow: /

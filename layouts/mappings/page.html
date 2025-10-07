@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <h1>{{ .Params.slug }}</h1>
+
+  <ul>
+      {{ with .Params.tags }}
+      <li>正字: {{ (printf `{{< copy "%s" >}}` (index . 0)) | $.Page.RenderString }}</li>
+      {{ end }}
+    <li>所據字書: {{ with .Params.src }}{{ . }}{{ end }}</li>
+    <li>考證: {{ with .Params.note }}{{ . }}{{ end }}</li>
+  </ul>
+{{ end }}
+{{ define "footer" }}
+<div class="footer border-top border-gray-light mt-5 pt-3 d-flex flex-justify-between text-gray">
+  <div class="text-left">
+    <ul>
+      {{ range .Site.Params.sources }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="text-right">
+    This site is open source.
+    <a href="https://github.com/{{ with .Params.repo }}{{ . }}{{ else }}{{ .Site.Params.github_repo }}{{ end }}/edit/{{ with .Params.branch }}{{ . }}{{ else }}{{ .Site.Params.github_branch }}{{ end }}/
+  {{- with .File -}}
+    {{ .Path }}
+  {{- else -}}
+    layouts/{{ .Kind }}.html
+  {{- end -}}">
+  Improve this page
+</a>.
+  </div>
+</div>
+{{ end }}
