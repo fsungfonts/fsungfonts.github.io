@@ -4,10 +4,6 @@ title: FSung Fonts
 theme: primer
 params:
   github_repo: fsungfonts/fsungfonts.github.io
-  repos:
-    mappings: fsungfonts/mappings
-  branches:
-    mappings: main
   sources:
     - "DCCV: 異體字字典 (2024)"
     - "GHZR: 漢語大字典 (2010)"
@@ -30,6 +26,6 @@ caches:
   images:
     dir: :cacheDir/images
 disableKinds:
-  - taxonomyTerm
+  - taxonomy
   - RSS
   - sitemap

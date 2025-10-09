@@ -3,7 +3,9 @@
   <ul>
     {{ range .Site.Sections }}
       <li>
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <a href="{{ .RelPermalink }}">
+        {{ if .Title }}{{ .Title }}{{ else }}{{ path.Base .File.Dir | title }}{{ end }}
+        </a>
       </li>
     {{ end }}
   </ul>

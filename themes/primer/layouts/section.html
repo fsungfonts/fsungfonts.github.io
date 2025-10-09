@@ -2,6 +2,8 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <p>
-  {{ template "leafpages" . }}
+  {{ range where .Site.RegularPages "Params.pua" true }}
+  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ end }}
   </p>
 {{ end }}

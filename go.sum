@@ -6,3 +6,11 @@ github.com/fsungfonts/mappings v0.0.0-20251008124244-912b58583e83 h1:q5goUh6uLoD
 github.com/fsungfonts/mappings v0.0.0-20251008124244-912b58583e83/go.mod h1:riFUPphxw7+0u0M2tamXDJBD/bQEf5TvQ//28hvdKgg=
 github.com/fsungfonts/mappings v0.0.0-20251008135016-754ccb4b82ad h1:R9fgqUCsK9I6D5YmQ8GajiQQdPhjwhTmXxeGcdUnrD8=
 github.com/fsungfonts/mappings v0.0.0-20251008135016-754ccb4b82ad/go.mod h1:riFUPphxw7+0u0M2tamXDJBD/bQEf5TvQ//28hvdKgg=
+github.com/fsungfonts/mappings v0.0.0-20251008150419-cebd9bbf919c h1:TC1gqLty7ESJTa0alD4p3WAPSi4lhZGyWaGxsCS+ZQI=
+github.com/fsungfonts/mappings v0.0.0-20251008150419-cebd9bbf919c/go.mod h1:riFUPphxw7+0u0M2tamXDJBD/bQEf5TvQ//28hvdKgg=
+github.com/fsungfonts/mappings v0.0.0-20251008151309-b1c31e976116 h1:nLcu2DBNR7Roui0olQdRa67Ns+9Xuak+4HxA2O2vlzQ=
+github.com/fsungfonts/mappings v0.0.0-20251008151309-b1c31e976116/go.mod h1:riFUPphxw7+0u0M2tamXDJBD/bQEf5TvQ//28hvdKgg=
+github.com/fsungfonts/mappings v0.0.0-20251008234439-d36322e7ae0b h1:yQxtw22EqzZ/vyYhz+Tyrot9rCNbZZvZPaQBverHU6E=
+github.com/fsungfonts/mappings v0.0.0-20251008234439-d36322e7ae0b/go.mod h1:riFUPphxw7+0u0M2tamXDJBD/bQEf5TvQ//28hvdKgg=
+github.com/fsungfonts/mappings v0.0.0-20251009035923-8839c547af87 h1:gR0lzrocW0vVHcbEQyUeQ1E9pxdugOvqOURw0EQdrUk=
+github.com/fsungfonts/mappings v0.0.0-20251009035923-8839c547af87/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=

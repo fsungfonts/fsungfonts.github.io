@@ -1,9 +1,0 @@
-{{ define "leafpages" }}
-  {{ range .Pages }}
-    {{ if .IsSection }}
-      {{ template "leafpages" . }}
-    {{ else }}
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-    {{ end }}
-  {{ end }}
-{{ end }}

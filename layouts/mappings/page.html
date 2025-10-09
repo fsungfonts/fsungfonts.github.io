@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h1>{{ .Params.slug }}</h1>
+  <h1>{{ .Params.url }}</h1>
 
   <ul>
       {{ with .Params.tags }}
@@ -26,8 +26,7 @@
   {{- else -}}
     layouts/{{ .Kind }}.html
   {{- end -}}">
-  Improve this page
-</a>.
+  Improve this page</a>.
   </div>
 </div>
 {{ end }}

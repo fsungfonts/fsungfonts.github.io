@@ -1,24 +1,13 @@
-<span class="copy-target">{{ .Get 0 }}</span>
-<button class="btn btn-sm btn-outline copy-btn" onclick="copyAndConfirm(this)">
-  <svg class="octicon octicon-clippy" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-    <path fill-rule="evenodd"
-      d="M2 2.5A2.5 2.5 0 014.5 0h7A2.5 2.5 0 0114 2.5v11a.5.5 0 01-1 0v-11A1.5 1.5 0 0011.5 1h-7A1.5 1.5 0 003 2.5v11A1.5 1.5 0 004.5 15h5a.5.5 0 010 1h-5A2.5 2.5 0 012 13.5v-11z"></path>
-  </svg>
-</button>
-<script>
-function copyAndConfirm(el) {
-  const text = el.previousElementSibling.innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    el.classList.remove("btn-outline");
-    el.classList.add("btn-success");
-    el.innerHTML = "Copied!";
-    setTimeout(() => {
-      el.classList.remove("btn-success");
-      el.classList.add("btn-outline");
-      el.innerHTML = `<svg class='octicon octicon-clippy' viewBox='0 0 16 16' width='16' height='16' aria-hidden='true'>
-        <path fill-rule='evenodd' d='M2 2.5A2.5 2.5 0 014.5 0h7A2.5 2.5 0 0114 2.5v11a.5.5 0 01-1 0v-11A1.5 1.5 0 0011.5 1h-7A1.5 1.5 0 003 2.5v11A1.5 1.5 0 004.5 15h5a.5.5 0 010 1h-5A2.5 2.5 0 012 13.5v-11z'></path>
-      </svg>`;
-    }, 1200);
-  });
-}
-</script>
+<span class="position-relative">
+  <span class="copy-target">{{ .Get 0 }}</span>
+  <button type="button" class="btn-octicon copy-btn tooltipped tooltipped-n" aria-label="Copy to clipboard">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-copy">
+      <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
+      <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+    </svg>
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-check color-fg-success d-none">
+      <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+    </svg>
+  </button>
+  <span aria-live="polite" class="sr-only"></span>
+</span>

@@ -1,5 +1,5 @@
 module github.com/fsungfonts/fsungfonts.github.io
 
-go 1.25.0
+go 1.24
 
-require github.com/fsungfonts/mappings v0.0.0-20251008135016-754ccb4b82ad // indirect
+require github.com/fsungfonts/mappings v0.0.0-20251009035923-8839c547af87 // indirect
