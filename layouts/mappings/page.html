@@ -6,7 +6,7 @@
     <li>
       正字:
       <a href="{{ "/" | relURL }}{{ index . 0 | urlize }}/">
-        {{ index . 0 }}
+        {{ (printf `{{< copy "%s" >}}` (index . 0)) | $.Page.RenderString }}
       </a>
     </li>
     {{ end }}
