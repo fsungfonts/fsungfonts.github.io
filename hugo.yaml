@@ -25,6 +25,9 @@ permalinks:
 caches:
   images:
     dir: :cacheDir/images
+build:
+  buildStats:
+    enable: true
 disableKinds:
   - taxonomy
   - RSS

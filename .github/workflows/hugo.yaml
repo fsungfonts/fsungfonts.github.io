@@ -26,6 +26,12 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 1
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install dependencies
+        run: |
+          bun install
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
