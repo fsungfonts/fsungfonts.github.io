@@ -1,10 +1,5 @@
 <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
   This site is open source. 
-  <a href="https://github.com/{{ with .Params.repo }}{{ . }}{{ else }}{{ .Site.Params.github_repo }}{{ end }}/edit/{{ with .Params.branch }}{{ . }}{{ else }}{{ .Site.Params.github_branch }}{{ end }}/
-    {{- with .File -}}
-      {{ .Path }}
-    {{- else -}}
-      themes/primer/layouts
-    {{- end -}}">
+  <a href="https://github.com/{{ with .Params.repo }}{{ . }}{{ else }}{{ .Site.Params.github_repo }}{{ end }}/edit/{{ with .Params.branch }}{{ . }}{{ else }}{{ .Site.Params.github_branch }}{{ end }}/{{- with .File -}}content/{{ .Path }}{{- else -}}themes/primer/layouts{{- end -}}">
     Improve this page</a>.
 </div>

@@ -2,9 +2,14 @@
   <h1>{{ .Params.url }}</h1>
 
   <ul>
-      {{ with .Params.tags }}
-      <li>正字: {{ (printf `{{< copy "%s" >}}` (index . 0)) | $.Page.RenderString }}</li>
-      {{ end }}
+    {{ with .Params.tags }}
+    <li>
+      正字:
+      <a href="{{ "/" | relURL }}{{ index . 0 | urlize }}/">
+        {{ index . 0 }}
+      </a>
+    </li>
+    {{ end }}
     <li>所據字書: {{ with .Params.src }}{{ . }}{{ end }}</li>
     <li>考證: {{ with .Params.note }}{{ . }}{{ end }}</li>
   </ul>
@@ -20,13 +25,8 @@
   </div>
   <div class="text-right">
     This site is open source.
-    <a href="https://github.com/{{ with .Params.repo }}{{ . }}{{ else }}{{ .Site.Params.github_repo }}{{ end }}/edit/{{ with .Params.branch }}{{ . }}{{ else }}{{ .Site.Params.github_branch }}{{ end }}/
-  {{- with .File -}}
-    {{ .Path }}
-  {{- else -}}
-    layouts/{{ .Kind }}.html
-  {{- end -}}">
-  Improve this page</a>.
+    <a href="https://github.com/{{ with .Params.repo }}{{ . }}{{ else }}{{ .Site.Params.github_repo }}{{ end }}/edit/{{ with .Params.branch }}{{ . }}{{ else }}{{ .Site.Params.github_branch }}{{ end }}/{{- with .File -}}content/{{ .Path }}{{- else -}}themes/primer/layouts{{- end -}}">
+      Improve this page</a>.
   </div>
 </div>
 {{ end }}
