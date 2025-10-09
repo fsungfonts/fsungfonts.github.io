@@ -6739,6 +6739,17 @@ pre {
   border: 0;
 }
 
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em; /* space between link and button */
+}
+
+.tag-link {
+  text-decoration: none;
+  color: #0969da;
+}
+
 .footer ul,
 .footer ol {
   list-style: none;

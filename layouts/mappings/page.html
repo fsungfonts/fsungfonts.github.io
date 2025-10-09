@@ -3,11 +3,15 @@
 
   <ul>
     {{ with .Params.tags }}
-    <li>
+    <li class="tag-item">
       正字:
-      <a href="{{ "/" | relURL }}{{ index . 0 | urlize }}/">
-        {{ (printf `{{< copy "%s" >}}` (index . 0)) | $.Page.RenderString }}
+      <!-- Tag link -->
+      <a href="{{ "/" | relURL }}{{ index . 0 | urlize }}/" class="tag-link">
+        {{ index . 0 }}
       </a>
+
+      <!-- Copy button (shortcode) -->
+      {{ (printf `{{< copy "%s" >}}` (index . 0)) | $.Page.RenderString }}
     </li>
     {{ end }}
     <li>所據字書: {{ with .Params.src }}{{ . }}{{ end }}</li>
