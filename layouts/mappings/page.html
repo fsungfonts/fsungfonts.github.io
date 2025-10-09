@@ -14,7 +14,7 @@
       {{ (printf `{{< copy "%s" >}}` (index . 0)) | $.Page.RenderString }}
     </li>
     {{ end }}
-    <li>所據字書: {{ with .Params.src }}{{ . }}{{ end }}</li>
+    <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>
     <li>考證: {{ with .Params.note }}{{ . }}{{ end }}</li>
   </ul>
 {{ end }}
