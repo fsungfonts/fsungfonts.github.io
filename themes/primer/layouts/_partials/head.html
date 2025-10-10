@@ -12,8 +12,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png" sizes="180x180">
 
 {{ if eq .Section "mappings" }}
-{{ $manifest := resources.Get "manifest.json" }}
-<link rel="manifest" href="{{ $manifest.RelPermalink }}">
+<link rel="manifest" href="/manifest.json">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 {{ end }}
 
