@@ -4,6 +4,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  repository_dispatch:
+    types: [module-updated]
 permissions:
   contents: read
   pages: write
@@ -69,6 +71,9 @@ jobs:
           key: hugo-${{ github.run_id }}
           restore-keys:
             hugo-
+      - name: Update Hugo modules
+        if: github.event_name == 'repository_dispatch'
+        run: hugo mod get -u
       - name: Build the site
         run: |
           hugo \
