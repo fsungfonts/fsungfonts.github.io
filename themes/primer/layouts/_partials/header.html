@@ -3,10 +3,10 @@
 {{ with .FirstSection }}
   {{ if ne . $.Page }}
     <a href="{{ .RelPermalink }}">
-      {{ if .Title }}{{ .Title }}{{ else }}{{ path.Base .File.Dir | title }}{{ end }}
+      {{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ path.Base .File.Dir | title }}{{ end }}
     </a>
   {{ else }}
-    {{ if .Title }}{{ .Title }}{{ else }}{{ path.Base .File.Dir | title }}{{ end }}
+    {{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ path.Base .File.Dir | title }}{{ end }}
   {{ end }}
 {{ else }}
   {{ .Title }}

@@ -1,3 +1,12 @@
 {{ define "main" }}
   {{ .Content }}
+  <ul>
+    {{ range .Site.Sections }}
+      <li>
+        <a href="{{ .RelPermalink }}">
+          {{ .Title }}
+        </a> – {{ .Description }}
+      </li>
+    {{ end }}
+  </ul>
 {{ end }}
