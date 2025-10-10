@@ -2,6 +2,7 @@ baseURL: https://fsungfonts.github.io/
 languageCode: zh-TW
 title: FSung Fonts
 theme: primer
+enableGitInfo: true
 params:
   github_repo: fsungfonts/fsungfonts.github.io
   sources:
@@ -31,4 +32,3 @@ build:
 disableKinds:
   - taxonomy
   - RSS
-  - sitemap
