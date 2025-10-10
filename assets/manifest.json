@@ -22,7 +22,7 @@
   "start_url": "/mappings/",
   "background_color": "#FFFFFF",
   "display": "browser",
-  "scope": "/mappings/",
+  "scope": "/",
   "theme_color": "#F6F8FA",
   "description": "Mapping FSung's PUA ideographs to their base characters"
 }

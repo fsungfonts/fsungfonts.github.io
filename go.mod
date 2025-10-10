@@ -2,4 +2,4 @@ module github.com/fsungfonts/fsungfonts.github.io
 
 go 1.24
 
-require github.com/fsungfonts/mappings v0.0.0-20251010004816-79728574cab6 // indirect
+require github.com/fsungfonts/mappings v0.0.0-20251010070325-4a81f9128c43 // indirect

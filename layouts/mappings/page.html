@@ -2,18 +2,18 @@
   <h1>{{ .Params.url }}</h1>
 
   <ul>
-    {{ with .Params.tags }}
     <li class="tag-item">
       正字:
-      <!-- Tag link -->
-      <a href="{{ "/" | relURL }}{{ index . 0 | urlize }}/" class="tag-link">
-        {{ index . 0 }}
-      </a>
+      {{ if gt (len .Params.tags) 0 }}
+        <!-- Tag link -->
+        <a href="{{ "/" | relURL }}{{ index .Params.tags 0 | urlize }}/" class="tag-link">
+          {{ index .Params.tags 0 }}
+        </a>
 
-      <!-- Copy button (shortcode) -->
-      {{ (printf `{{< copy "%s" >}}` (index . 0)) | $.Page.RenderString }}
+        <!-- Copy button (shortcode) -->
+        {{ (printf `{{< copy "%s" >}}` (index .Params.tags 0)) | $.Page.RenderString }}
+      {{ end }}
     </li>
-    {{ end }}
     <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>
     <li>考證: {{ with .Params.note }}{{ . }}{{ end }}</li>
   </ul>
