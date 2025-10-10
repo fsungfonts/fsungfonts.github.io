@@ -6756,3 +6756,10 @@ pre {
   margin: 0;
   padding: 0;
 }
+
+@view-transition {
+navigation: auto;
+}
+::view-transition-group(*) {
+animation-duration: 0.3s;
+}
