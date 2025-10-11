@@ -30,3 +30,11 @@ github.com/fsungfonts/mappings v0.0.0-20251010070325-4a81f9128c43 h1:Plob1/8C2ip
 github.com/fsungfonts/mappings v0.0.0-20251010070325-4a81f9128c43/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
 github.com/fsungfonts/mappings v0.0.0-20251010120913-8c1b42ec711d h1:Xl7Mq76E+B7fJHNPEoy+TJf+LOERcm1SS75dNXpZEMU=
 github.com/fsungfonts/mappings v0.0.0-20251010120913-8c1b42ec711d/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251011022732-c5581fbd8d42 h1:Z58kW1w+vUjcz7N4emzrxY406HRtd7uwOU840RWVztk=
+github.com/fsungfonts/mappings v0.0.0-20251011022732-c5581fbd8d42/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251011054457-689076737fcc h1:OnT1Sfj+1CRddueVOTeod8FbPWJ0C3GtlGUTESniutU=
+github.com/fsungfonts/mappings v0.0.0-20251011054457-689076737fcc/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251011055447-48885ad85fdb h1:KkREdQdqVl0c8KHcVF7eFzQHdLa0NS6UKoCkB1R+MNY=
+github.com/fsungfonts/mappings v0.0.0-20251011055447-48885ad85fdb/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251011060516-fb861e02af66 h1:UZKAIKePf3DU1ApDiqowuxIXUhM69NNvTEkfJUdzxKI=
+github.com/fsungfonts/mappings v0.0.0-20251011060516-fb861e02af66/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=

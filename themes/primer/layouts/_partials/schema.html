@@ -1,0 +1,87 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ with .Params.schemaType }}{{ . }}{{ else }}WebPage{{ end }}",
+
+  {{- $title := or .Title site.Title | plainify }}
+  "name": "{{ $title }}",
+  "headline": "{{ with .Params.headline }}{{ . }}{{ else }}{{ $title }}{{ end }}",
+
+  {{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+    {{- $desc := trim . "\n\r\t " -}}
+    "description": "{{ if in $desc "%s" }}{{ printf $desc $.Title }}{{ else }}{{ $desc }}{{ end }}",
+  {{- end }}
+
+  "url": "{{ .Permalink }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+
+  {{- $ISO8601 := "2006-01-02T15:04:05Z07:00" }}
+  {{- with .PublishDate }}
+  "datePublished": "{{ .Format $ISO8601 }}",
+  {{- end }}
+  {{- with .Lastmod }}
+  "dateModified": "{{ .Format $ISO8601 }}",
+  {{- end }}
+  {{- with .WordCount }}
+  "wordCount": {{ . }},
+  {{- end }}
+
+  {{- $images := partial "_funcs/get-page-images" . }}
+  {{- with $images }}
+  "image": [
+    {{- range $i, $img := first 6 . -}}
+      "{{ $img.Permalink }}"{{ if lt (add $i 1) (len (first 6 $images)) }},{{ end }}
+    {{- end }}
+  ],
+  {{- end }}
+
+  {{- /* Keywords logic */}}
+  {{- $keywords := slice }}
+  {{- range .GetTerms "keywords" }}
+    {{- $keywords = $keywords | append .Title }}
+  {{- else }}
+    {{- with .Keywords }}
+      {{- $keywords = . }}
+    {{- else }}
+      {{- range .GetTerms "tags" }}
+        {{- $keywords = $keywords | append .Title }}
+      {{- else }}
+        {{- range $taxonomy, $_ := site.Taxonomies }}
+          {{- range $.GetTerms $taxonomy }}
+            {{- $keywords = $keywords | append .Title }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- with $keywords }}
+  "keywords": [
+    {{- range $i, $kw := . -}}
+      "{{ $kw }}"{{ if lt (add $i 1) (len $keywords) }},{{ end }}
+    {{- end }}
+  ],
+  {{- end }}
+
+  {{- with .Params.author }}
+  "author": {
+    "@type": "Person",
+    "name": "{{ . }}"
+  },
+  {{- end }}
+
+  {{- with site.Params.publisher }}
+  {{- $svgicon := resources.Get "icon.svg" }}
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ . }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ $svgicon.Permalink }}"
+    }
+  }
+  {{- end }}
+}
+</script>

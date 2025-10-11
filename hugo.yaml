@@ -5,6 +5,7 @@ theme: primer
 enableGitInfo: true
 params:
   github_repo: fsungfonts/fsungfonts.github.io
+  publisher: "The FSung Fonts Project"
   sources:
     - "DCCV: 異體字字典 (2024)"
     - "GHZR: 漢語大字典 (2010)"
