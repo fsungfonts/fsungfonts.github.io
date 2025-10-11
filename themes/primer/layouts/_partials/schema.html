@@ -12,12 +12,6 @@
     "description": "{{ if in $desc "%s" }}{{ printf $desc $.Title }}{{ else }}{{ $desc }}{{ end }}",
   {{- end }}
 
-  "url": "{{ .Permalink }}",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ .Permalink }}"
-  },
-
   {{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
   {{- with .PublishDate }}
   "datePublished": "{{ .Format $ISO8601 }}",
