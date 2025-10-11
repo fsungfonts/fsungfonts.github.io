@@ -6050,9 +6050,7 @@ pre {
     content: ""
 }
 
-.markdown-body > header:first-child > :first-child,
-.markdown-body > header + main > :first-child,
-.markdown-body > header:first-child > nav + :first-child {
+.markdown-body > header:first-child > :first-child {
     margin-top:0 !important
 }
 
