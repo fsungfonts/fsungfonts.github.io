@@ -21,7 +21,7 @@
   {{- end }}
 
   {{- with site.Params.publisher }}
-  {{- $svgicon := resources.Get "icon.svg" }}
+  {{ $svgicon := resources.Get "icon.svg" | minify | resources.Copy "icon.svg" }}
   "publisher": {
     "@type": "Organization",
     "name": "{{ . }}",
