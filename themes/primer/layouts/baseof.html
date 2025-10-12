@@ -6,14 +6,16 @@
 <body>
   <div class="container-lg px-3 my-5 markdown-body">
     <header>
-      {{ partial "header.html" . }}
+      {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
     </header>
     <main>
       {{ block "main" . }}{{ end }}
     </main>
     <footer>
-      {{ partial "footer.html" . }}
+      {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
     </footer>
   </div>
+  {{ block "js" . }}{{ end }}
+  {{ partialCached "sw.html" . }}
 </body>
 </html>

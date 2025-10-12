@@ -34,3 +34,6 @@
   </div>
 </div>
 {{ end }}
+{{ define "js" }}
+  {{ partialCached "head/js.html" .Site }}
+{{ end }}
