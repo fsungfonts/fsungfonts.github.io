@@ -1,0 +1,4 @@
+{{ $svgicon := resources.Get "icon.svg" | minify }}
+<link rel="icon" href="{{ $svgicon.RelPermalink }}" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png" sizes="180x180">

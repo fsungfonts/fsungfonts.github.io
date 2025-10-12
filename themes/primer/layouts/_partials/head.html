@@ -1,19 +1,10 @@
-<meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="viewport" content="width=device-width">
-<meta name="robots" content="noarchive">
+{{ partialCached "head/meta.html" . }}
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
-
-{{ $svgicon := resources.Get "icon.svg" }}
-<link rel="icon" href="{{ $svgicon.RelPermalink }}" type="image/svg+xml" sizes="any">
-<link rel="icon" href="/favicon.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png" sizes="180x180">
+{{ partialCached "head/icons.html" . }}
 
 {{ if eq .Section "mappings" }}
-<link rel="manifest" href="/manifest.json">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  {{ partialCached "head/pwa.html" . }}
 {{ end }}
 
 {{ partial "schema.html" . }}
