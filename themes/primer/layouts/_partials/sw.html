@@ -1,6 +1,0 @@
-{{ $sw := resources.Get "js/sw.js" | minify | resources.Copy "sw.js" }}
-<script type="module">
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('{{ $sw.RelPermalink }}');
-  }
-</script>

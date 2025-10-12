@@ -1,3 +1,4 @@
+{{ $sw := resources.Get "js/sw.js" | minify | resources.Copy "sw.js" }}
 {{- with resources.Get "js/main.js" }}
   {{- $opts := dict
     "minify" (not hugo.IsDevelopment)
