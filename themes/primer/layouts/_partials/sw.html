@@ -1,0 +1,2 @@
+{{ $sw := resources.Get "js/sw.js" | minify | resources.Copy "sw.js" }}
+{{ $dummy := $sw.RelPermalink }}
