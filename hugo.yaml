@@ -33,3 +33,4 @@ build:
 disableKinds:
   - taxonomy
   - RSS
+  - sitemap
