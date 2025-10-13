@@ -1,4 +1,4 @@
-Sitemap: https://fsungfonts.github.io/sitemap.xml
+Sitemap: https://fsungfonts.github.io/sitemap_index.xml
 
 User-agent: Baiduspider
 User-agent: Bytespider
