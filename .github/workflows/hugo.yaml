@@ -63,14 +63,14 @@ jobs:
       - name: Configure Git
         run: |
           git config core.quotepath false
-      - name: Cache restore
-        id: cache-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: hugo-${{ github.run_id }}
-          restore-keys:
-            hugo-
+      #- name: Cache restore
+      #  id: cache-restore
+      #  uses: actions/cache/restore@v4
+      #  with:
+      #    path: ${{ runner.temp }}/hugo_cache
+      #    key: hugo-${{ github.run_id }}
+      #    restore-keys:
+      #      hugo-
       - name: Update Hugo modules
         if: github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
         run: hugo mod get -u
@@ -82,12 +82,12 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache" \
             --templateMetrics --templateMetricsHints
-      - name: Cache save
-        id: cache-save
-        uses: actions/cache/save@v4
-        with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+      #- name: Cache save
+      #  id: cache-save
+      #  uses: actions/cache/save@v4
+      #  with:
+      #    path: ${{ runner.temp }}/hugo_cache
+      #    key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
