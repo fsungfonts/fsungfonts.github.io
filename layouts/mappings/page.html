@@ -5,10 +5,7 @@
     <li class="tag-item">
       正字:
       {{ if gt (len .Params.tags) 0 }}
-        <!-- Tag link -->
-        <a href="{{ "/" | relURL }}{{ index .Params.tags 0 | urlize }}/" class="tag-link">
           {{ index .Params.tags 0 }}
-        </a>
 
         <!-- Copy button (shortcode) -->
         {{ partial "copy.html" (index .Params.tags 0) }}

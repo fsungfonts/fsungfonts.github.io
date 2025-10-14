@@ -17,13 +17,10 @@ module:
   mounts:
     - source: content
       target: content
-taxonomies:
-  tag: "tags"
+taxonomies: {}
 permalinks:
   page:
     mappings: /:slug/
-  term:
-    tags: /:slug/
 caches:
   images:
     dir: :cacheDir/images
