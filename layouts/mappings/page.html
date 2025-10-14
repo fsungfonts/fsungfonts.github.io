@@ -12,7 +12,7 @@
       {{ end }}
     </li>
     <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>
-    <li>考證: {{ with .Params.note }}{{ . }}{{ end }}</li>
+    <li>考證: {{ with .Params.note }}{{ . | markdownify }}{{ end }}</li>
   </ul>
 {{ end }}
 {{ define "footer" }}
