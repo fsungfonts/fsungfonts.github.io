@@ -12,6 +12,8 @@ params:
     - "GLK: 龍龕手鏡 (997/a1259)"
     - "GZH: 中華字海 (2000)"
     - "HZH: 漢字海 (2018)"
+    - "Huang2: 敦煌俗字典 (2019)"
+    - "Yang3: 疑難字三考 (2018)"
 module:
   imports:
     - path: github.com/fsungfonts/mappings
