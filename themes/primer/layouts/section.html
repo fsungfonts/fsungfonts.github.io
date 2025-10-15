@@ -2,7 +2,7 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <p>
-  {{ range sort (where .Site.RegularPages "Params.pua" true) "Lastmod" "desc" }}
+  {{ range .RegularPagesRecursive.ByLastmod.Reverse }}
   <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
   {{ end }}
   </p>
