@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <p>Completed:
+  <p>IVS-ready:
   {{ range (where .RegularPagesRecursive "Params.ivs" 0).ByLastmod.Reverse }}
     <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
   {{ end }}
