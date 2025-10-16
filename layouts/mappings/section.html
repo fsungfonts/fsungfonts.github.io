@@ -1,21 +1,25 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <p>IVS-ready:
-  {{ range (where .RegularPagesRecursive "Params.ivs" 0).ByLastmod.Reverse }}
-    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-  {{ end }}
-  </p>
+  {{ $ivsReady := where .RegularPagesRecursive "Params.ivs" 0 }}
+  {{ $noBase := where .RegularPagesRecursive "Params.ivs" 1 }}
+  {{ $todo := where .RegularPagesRecursive "Params.ivs" nil }}
   
-  <p>No base character:
-    {{ range (where .RegularPagesRecursive "Params.ivs" 1).ByLastmod.Reverse }}
+  <p>IVS-ready ({{ len $ivsReady }}):
+    {{ range $ivsReady.ByLastmod.Reverse }}
       <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     {{ end }}
   </p>
   
-  <p>TODO:
-  {{ range where .RegularPagesRecursive.ByLastmod.Reverse "Params.ivs" nil }}
-    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-  {{ end }}
+  <p>No base character ({{ len $noBase }}):
+    {{ range $noBase.ByLastmod.Reverse }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{ end }}
+  </p>
+  
+  <p>TODO ({{ len $todo }}):
+    {{ range $todo.ByLastmod.Reverse }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{ end }}
   </p>
 {{ end }}
