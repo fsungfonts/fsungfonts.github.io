@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p>Completed:
+  {{ range (where .RegularPagesRecursive "Params.ivs" 0).ByLastmod.Reverse }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ end }}
+  </p>
+  
+  <p>No base character:
+    {{ range (where .RegularPagesRecursive "Params.ivs" 1).ByLastmod.Reverse }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{ end }}
+  </p>
+  
+  <p>TODO:
+    {{ range (where .RegularPagesRecursive "Params.ivs" "nil").ByLastmod.Reverse }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{ end }}
+  </p>
+{{ end }}
