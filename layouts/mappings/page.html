@@ -5,14 +5,18 @@
     <li class="tag-item">
       正字:
       {{ if gt (len .Params.tags) 0 }}
+        {{ if eq .Params.ivs 0 }}
+          <a href="{{ "ivs/" | relURL }}{{ .Params.hex }}.txt" class="tag-link">
+            {{ index .Params.tags 0 }}
+          </a>
+        {{ else }}
           {{ index .Params.tags 0 }}
-
-        <!-- Copy button (shortcode) -->
+        {{ end }}
         {{ partial "copy.html" (index .Params.tags 0) }}
       {{ end }}
     </li>
     <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>
-    <li>考證: {{ with .Params.note }}{{ . | markdownify }}{{ end }}</li>
+    <li>考證: {{ with .Params.note }}{{ . }}{{ end }}</li>
   </ul>
 {{ end }}
 {{ define "footer" }}

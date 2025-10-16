@@ -14,8 +14,8 @@
   </p>
   
   <p>TODO:
-    {{ range (where .RegularPagesRecursive "Params.ivs" "nil").ByLastmod.Reverse }}
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-    {{ end }}
+  {{ range where .RegularPagesRecursive.ByLastmod.Reverse "Params.ivs" nil }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ end }}
   </p>
 {{ end }}
