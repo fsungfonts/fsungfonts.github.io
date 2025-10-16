@@ -17,11 +17,6 @@ params:
 module:
   imports:
     - path: github.com/fsungfonts/mappings
-  mounts:
-    - source: content
-      target: content
-    - source: data
-      target: static
 taxonomies: {}
 permalinks:
   page:
