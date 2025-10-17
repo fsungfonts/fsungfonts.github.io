@@ -22,3 +22,5 @@ github.com/fsungfonts/mappings v0.0.0-20251016221044-b5730ed8e512 h1:Zkgv4dFqDlJ
 github.com/fsungfonts/mappings v0.0.0-20251016221044-b5730ed8e512/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
 github.com/fsungfonts/mappings v0.0.0-20251017040721-a2e2b524a13f h1:SDZTDMHOLW4MZKhvJ6VXgwMA46XX9C6cOFWpmZd6vVM=
 github.com/fsungfonts/mappings v0.0.0-20251017040721-a2e2b524a13f/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251017131027-91853856cea4 h1:8MDMQAgVQEP0u3RwDJAp/TVpOhjqZ3hpCDmLIzXFk20=
+github.com/fsungfonts/mappings v0.0.0-20251017131027-91853856cea4/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
