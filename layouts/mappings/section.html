@@ -3,8 +3,8 @@
   {{ .Content }}
   {{ $all := .RegularPagesRecursive }}
 
-  {{ $ivsReady := where $all "Params.bc" "not in" (slice nil "1") }}
-  {{ $noBase   := where $all "Params.bc" "1" }}
+  {{ $ivsReady := where $all "Params.bc" "not in" (slice nil 1) }}
+  {{ $noBase   := where $all "Params.bc" 1 }}
   {{ $todo     := where $all "Params.bc" nil }}
   
   <p>IVS-ready ({{ len $ivsReady }}):
