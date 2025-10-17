@@ -3,20 +3,19 @@
 
   <ul>
     <li class="tag-item">
-      正字:
-      {{ if gt (len .Params.tags) 0 }}
-        {{ if eq .Params.ivs 0 }}
-          <a href="{{ "ivs/" | relURL }}{{ .Params.hex }}.txt" class="tag-link">
-            {{ index .Params.tags 0 }}
-          </a>
-        {{ else }}
-          {{ index .Params.tags 0 }}
-        {{ end }}
-        {{ partial "copy.html" (index .Params.tags 0) }}
+      BC:
+      {{ with .Params.bc }}
+        <a href="{{ "ivs/" | relURL }}{{ $.Params.hex }}.txt" class="tag-link">
+          {{ . }}
+        </a>
+        {{ partial "copy.html" . }}
       {{ end }}
     </li>
-    <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>
-    <li>考證: {{ with .Params.note }}{{ . }}{{ end }}</li>
+    <li>正字: {{ with index .Params.tags 0 }}{{ . }}{{ end }}</li>
+      <ul>
+        <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>
+      </ul>
+    <li>考證: {{ with .Params.note }}{{ . | markdownify }}{{ end }}</li>
   </ul>
 {{ end }}
 {{ define "footer" }}

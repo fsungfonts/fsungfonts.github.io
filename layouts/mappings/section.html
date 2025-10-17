@@ -1,9 +1,19 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ $ivsReady := where .RegularPagesRecursive "Params.ivs" 0 }}
-  {{ $noBase := where .RegularPagesRecursive "Params.ivs" 1 }}
-  {{ $todo := where .RegularPagesRecursive "Params.ivs" nil }}
+  {{ $ivsReady := slice }}
+  {{ $noBase   := slice }}
+  {{ $todo     := slice }}
+  
+  {{ range .RegularPagesRecursive }}
+    {{ if eq .Params.bc nil }}
+      {{ $todo = $todo | append . }}
+    {{ else if eq .Params.bc "1" }}
+      {{ $noBase = $noBase | append . }}
+    {{ else }}
+      {{ $ivsReady = $ivsReady | append . }}
+    {{ end }}
+  {{ end }}
   
   <p>IVS-ready ({{ len $ivsReady }}):
     {{ range $ivsReady.ByLastmod.Reverse }}
