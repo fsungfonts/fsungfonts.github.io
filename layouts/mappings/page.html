@@ -11,7 +11,7 @@
         {{ partial "copy.html" . }}
       {{ end }}
     </li>
-    <li>正字: {{ with index .Params.tags 0 }}{{ . }}{{ end }}</li>
+    <li>正字: {{ delimit .Params.tags ", " }}</li>
     <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>
     <li>考證: {{ with .Params.note }}{{ . | markdownify }}{{ end }}</li>
   </ul>
