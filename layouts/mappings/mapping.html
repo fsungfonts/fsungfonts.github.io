@@ -5,10 +5,10 @@
     <li class="tag-item">
       BC:
       {{ if and (.Params.bc) (ne .Params.bc 1) }}
-        <a href="{{ "ivs/" | relURL }}{{ $.Params.hex }}.txt" class="tag-link">
-          {{ . }}
+        <a href="{{ "ivs/" | relURL }}{{ .Params.hex }}.txt" class="tag-link">
+          {{ .Params.bc }}
         </a>
-        {{ partial "copy.html" . }}
+        {{ partial "copy.html" .Params.bc }}
       {{ end }}
     </li>
     <li>正字: {{ delimit .Params.tags ", " }}</li>
