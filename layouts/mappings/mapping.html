@@ -4,7 +4,7 @@
   <ul>
     <li class="tag-item">
       BC:
-      {{ with .Params.bc }}
+      {{ if and (.Params.bc) (ne .Params.bc 1) }}
         <a href="{{ "ivs/" | relURL }}{{ $.Params.hex }}.txt" class="tag-link">
           {{ . }}
         </a>
