@@ -3,13 +3,20 @@
 
   <ul>
     <li class="tag-item">
-      BC:
-      {{ if and (.Params.bc) (ne .Params.bc 1) }}
-        <a href="{{ "ivs/" | relURL }}{{ .Params.hex }}.txt" class="tag-link">
-          {{ .Params.bc }}
-        </a>
-        {{ partial "copy.html" .Params.bc }}
-      {{ end }}
+      <span class="tag-label">BC:</span>
+      <div class="tag-content">
+        {{ if ne .Params.bc 1 }}
+          {{ range $i, $v := .Params.bc }}
+            {{ $hex := index $.Params.hex $i }}
+            <div class="tag-row">
+              <a href="{{ "ivs/" | relURL }}{{ $hex }}.txt" class="tag-link">
+                {{ $v }}
+              </a>
+              {{ partial "copy.html" $v }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
     </li>
     <li>正字: {{ delimit .Params.tags ", " }}</li>
     <li>所據字書: {{ with .Params.src }}{{ . | markdownify }}{{ end }}</li>

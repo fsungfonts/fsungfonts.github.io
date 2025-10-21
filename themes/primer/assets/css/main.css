@@ -6742,9 +6742,9 @@ pre {
 }
 
 .tag-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em; /* space between link and button */
+display: flex;
+align-items: flex-start;
+gap: 0.5em;
 }
 
 .tag-link {

@@ -50,3 +50,7 @@ github.com/fsungfonts/mappings v0.0.0-20251019115639-c817ab64d067 h1:22x+C2x1VCp
 github.com/fsungfonts/mappings v0.0.0-20251019115639-c817ab64d067/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
 github.com/fsungfonts/mappings v0.0.0-20251021074826-f777e93302b6 h1:xZWHX0vc/1Kv4sgx6hCeE2GviEt5Ew4dp6TJBXJvR+U=
 github.com/fsungfonts/mappings v0.0.0-20251021074826-f777e93302b6/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251021135455-2a36b1bf99ec h1:3EoVMOF5kECF9AJGT6hilD0VXtvJRxvQC7Md1Uj17ts=
+github.com/fsungfonts/mappings v0.0.0-20251021135455-2a36b1bf99ec/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251021141422-3b909727fe29 h1:SfyoXVof+rtaxwRgjdVUX+6YLqXp+iC5+p3vpi3g8u0=
+github.com/fsungfonts/mappings v0.0.0-20251021141422-3b909727fe29/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
