@@ -10,7 +10,7 @@
             {{ $hex := index $.Params.hex $i }}
             <div>
               <a href="{{ "ivs/" | relURL }}{{ $hex }}.txt" class="tag-link">
-                {{ $v }}
+                {{- $v -}}
               </a>
               {{ partial "copy.html" $v }}
             </div>
