@@ -3,39 +3,24 @@
   {{ .Content }}
   {{ $all := .RegularPagesRecursive }}
 
-  {{ $ivsReady := slice }}
-  {{ $noBase := slice }}
-  {{ $todo := slice }}
-  
-  {{ range $all }}
-    {{ $bc := .Params.bc }}
-    {{ if eq $bc nil }}
-      {{ $todo = $todo | append . }}
-    {{ else if eq $bc 1 }}
-      {{ $noBase = $noBase | append . }}
-    {{ else }}
-      {{ $ivsReady = $ivsReady | append . }}
-    {{ end }}
-  {{ end }}
-  
-  {{ $ivsReady = $ivsReady.ByLastmod.Reverse }}
-  {{ $noBase = $noBase.ByLastmod.Reverse }}
-  {{ $todo = $todo.ByLastmod.Reverse }}
+  {{ $noBase   := where $all "Params.bc" 1 }}
+  {{ $todo     := where $all "Params.bc" nil }}
+  {{ $ivsReady := $all | complement $noBase | complement $todo }}
   
   <p>IVS-ready ({{ len $ivsReady }}):
-    {{ range $ivsReady }}
+    {{ range $ivsReady.ByLastmod.Reverse }}
       <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     {{ end }}
   </p>
   
   <p>No base character ({{ len $noBase }}):
-    {{ range $noBase }}
+    {{ range $noBase.ByLastmod.Reverse }}
       <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     {{ end }}
   </p>
   
   <p>TODO ({{ len $todo }}):
-    {{ range $todo }}
+    {{ range $todo.ByLastmod.Reverse }}
       <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     {{ end }}
   </p>
