@@ -6744,12 +6744,13 @@ pre {
 .tag-item {
 display: flex;
 align-items: flex-start;
-gap: 0.5em;
+gap: 0.4em;
 }
 
-.tag-link {
+.tag-link:hover,
+.tag-link:focus,
+.tag-link:active {
   text-decoration: none;
-  color: #0969da;
 }
 
 .footer ul,
