@@ -18,7 +18,7 @@ defaults:
     shell: bash
 jobs:
   build:
-    runs-on: blacksmith-8vcpu-ubuntu-2404
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     env:
       GO_VERSION: 1.24
       HUGO_VERSION: 0.152.2
