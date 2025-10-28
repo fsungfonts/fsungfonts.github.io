@@ -1,5 +1,9 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <h1>{{ .Title }}
+    <a href=https://doi.org/10.5281/zenodo.17460614>
+      <img src=/zenodo.17460614.svg alt=DOI>
+    </a>
+  </h1>
   {{ .Content }}
   {{ $all := .RegularPagesRecursive }}
 
