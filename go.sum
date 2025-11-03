@@ -66,3 +66,5 @@ github.com/fsungfonts/mappings v0.0.0-20251028005936-3f1492cfb11f h1:Wsqmf0b2PN3
 github.com/fsungfonts/mappings v0.0.0-20251028005936-3f1492cfb11f/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
 github.com/fsungfonts/mappings v0.0.0-20251028011409-074b18125230 h1:RbhLZgNQ1AJks8ATBwIMWXEl4UTSCCgwLtc0xkEQN1I=
 github.com/fsungfonts/mappings v0.0.0-20251028011409-074b18125230/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
+github.com/fsungfonts/mappings v0.0.0-20251103024641-c76eed2b2a91 h1:+ArWprPfnPZZL3Gd0GiG4uDxJtzjr/jKZ/2wwwFltCM=
+github.com/fsungfonts/mappings v0.0.0-20251103024641-c76eed2b2a91/go.mod h1:40ljjS30H8R3joBmaMddS8gx80gX0Qbcuqyp5tgHTCM=
